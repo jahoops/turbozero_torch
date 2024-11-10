@@ -1,0 +1,36 @@
+{
+  "name": "Python & C Development Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",  // Add this line to set the build context to the parent directory
+    "args": {
+      "DOCKER_GID": "986",  // Replace with your actual Docker group GID
+      "USER_ID": "1000",
+      "GROUP_ID": "1000"
+    }
+  },
+  "runArgs": [
+    "--net=host",
+    "-e", "DISPLAY=:0",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
+    "-v", "${env:HOME}/.Xauthority:/root/.Xauthority:rw",
+    "-e", "XAUTHORITY=/root/.Xauthority"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.cpptools"
+      ]
+    }
+  },
+  "forwardPorts": [5680],
+  "mounts": [
+    "source=/home/j/projects/TurboZero,target=/TurboZero,type=bind",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "root"  // Ensure this matches your container's username
+}
