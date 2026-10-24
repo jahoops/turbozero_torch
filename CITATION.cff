@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+authors:
+- family-names: "Marshall"
+  given-names: "Jacob"
+title: "TurboZero: Vectorized AlphaZero, MCTS, and Environments"
+abstract: vectorized implementations of RL algorithms and environments, including AlphaZero/MCTS
+url: "https://github.com/lowrollr/turbozero"

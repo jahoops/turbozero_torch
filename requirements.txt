@@ -1,0 +1,14 @@
+deap
+numpy
+pygame
+pymunk
+debugpy
+torch
+torchvision
+net-tools
+matplotlib
+pyyaml
+colorama
+bottleneck
+tqdm
+ipython
